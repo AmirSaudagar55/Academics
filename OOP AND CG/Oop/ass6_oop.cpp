@@ -16,16 +16,16 @@ class Item
         int cost;
         int code;
 
-        bool operator==(const Item& i1)    //Boolean operators allow you to                                                         create more complex conditional statements
+        bool operator==(const Item& i1)    //Boolean operators allow you to create more complex conditional statements
     {
-        if(code==i1.code)    //operator will return 1 if the comparison is true, or 0 if                                          the comparison is false
+        if(code==i1.code)    //operator will return 1 if the comparison is true, or 0 if the comparison is false
         return 1;
         return 0;
     }
 
     bool operator<(const Item& i1)
     {
-        if(code<i1.code)    //operator will return 1 if the comparison is true, or 0 if                                         the comparison is false
+        if(code<i1.code)    //operator will return 1 if the comparison is true, or 0 if the comparison is false
         return 1;
         return 0;
     }

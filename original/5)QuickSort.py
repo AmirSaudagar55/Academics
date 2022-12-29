@@ -7,6 +7,27 @@ def display(marks):
 #		print(marks[i])
 #		print(" ")
 
+''' -------------Another (easy to understand) partition function---------------
+def partition(elements, start, end):
+    pivot_index = start
+    pivot = elements[pivot_index]
+
+    while start < end:
+        while start < len(elements) and elements[start] <= pivot:
+            start+=1
+
+        while elements[end] > pivot:
+            end-=1
+
+        if start < end:
+            swap(start, end, elements) #elements[start],elements[end] = elements[end],elements[start]
+
+    swap(pivot_index, end, elements) #elements[pivot_index],elements[end] = elements[end],elements[pivot_index]
+
+    return end
+    '''
+
+
 def partition(a, low, high):
 	pivot = a[low]
 	i = low + 1

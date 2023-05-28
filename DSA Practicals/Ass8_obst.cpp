@@ -7,9 +7,9 @@ class OBST
 int p[SIZE]; // Probabilities with which we search for an element
 int q[SIZE];//Probabilities that an element is not found
 int a[SIZE];//Elements from which OBST is to be built
-int w[SIZE][SIZE];//Weight ‘w[i][j]’ of a tree having root
-//’r[i][j]’
-int c[SIZE][SIZE];//Cost ‘c[i][j] of a tree having root ‘r[i][j]
+int w[SIZE][SIZE];//Weight â€˜w[i][j]â€™ of a tree having root
+//â€™r[i][j]â€™
+int c[SIZE][SIZE];//Cost â€˜c[i][j] of a tree having root â€˜r[i][j]
 int r[SIZE][SIZE];//represents root
 int n; // number of nodes
 public:
@@ -20,7 +20,7 @@ int i;
 cout<<"\n Optimal Binary Search Tree \n";
 cout<<"\n Enter the number of nodes";
 cin>>n;
-cout<<"\n Enter the data as…\n";
+cout<<"\n Enter the data asâ€¦\n";
 for(i=1;i<=n;i++)
 {
 cout<<"\n a["<<i<<"]";
@@ -37,8 +37,8 @@ cout<<"\n q["<<i<<"]";
 cin>>q[i];
 }
 }
-/* This function returns a value in the range ‘r[i][j-1]’ to ‘r[i+1][j]’so
-that the cost ‘c[i][k-1]+c[k][j]’is minimum */
+/* This function returns a value in the range â€˜r[i][j-1]â€™ to â€˜r[i+1][j]â€™so
+that the cost â€˜c[i][k-1]+c[k][j]â€™is minimum */
 int Min_Value(int i,int j)
 {
 int m,k;
@@ -70,7 +70,7 @@ c[i][i+1]=q[i]+q[i+1]+p[i+1];
  }
  w[n][n]=q[n];
  r[n][n]=c[n][n]=0;
- //Find optimal trees with ‘m’ nodes
+ //Find optimal trees with â€˜mâ€™ nodes
  for(m=2;m<=n;m++)
  {
 for(i=0;i<=n-m;i++)
@@ -88,7 +88,7 @@ void build_tree()
 {
  int i,j,k;
  int queue[20],front=-1,rear=-1;
- cout<<"The Optimal Binary Search Tree For the Given Node Is…\n";
+ cout<<"The Optimal Binary Search Tree For the Given Node Isâ€¦\n";
  cout<<"\n The Root of this OBST is ::"<<r[0][n];
  cout<<"\nThe Cost of this OBST is::"<<c[0][n];
  cout<<"\n\n\t NODE \t LEFT CHILD \t RIGHT CHILD ";
@@ -133,7 +133,7 @@ return 0;
 /*-------------output---------------
 Optimal Binary Search Tree
 Enter the number of nodes 4
-Enter the data as…
+Enter the data asâ€¦
 a[1] 1
 a[2] 2
 a[3] 3
@@ -147,7 +147,7 @@ q[1]3
 q[2]1
 q[3]1
 q[4]1
-The Optimal Binary Search Tree For the Given Node Is…
+The Optimal Binary Search Tree For the Given Node Isâ€¦
 The Root of this OBST is ::2
 The Cost of this OBST is::32
 NODE LEFT CHILD RIGHT CHILD

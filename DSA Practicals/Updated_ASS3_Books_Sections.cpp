@@ -4,8 +4,9 @@ using namespace std;
 class Node {
 public:
     string label;
-    int cnt; // Counts number of chapters, sections, sub-sections
+    int cnt; // Counts number of chapters, sections, subsections
     Node* child[10];
+    Node* subsection[10];
 };
 
 class Book {
@@ -35,9 +36,20 @@ public:
 
             for (int j = 0; j < root->child[i]->cnt; j++) {
                 root->child[i]->child[j] = new Node;
-                cout << "Enter the name of section: ";
+                cout << "Enter the name of section " << j + 1 << ": ";
                 cin.ignore();
                 getline(cin, root->child[i]->child[j]->label);
+
+                cout << "Enter the number of subsections it has: ";
+                cin >> root->child[i]->child[j]->cnt;
+
+                for (int k = 0; k < root->child[i]->child[j]->cnt; k++) {
+                    root->child[i]->child[j]->subsection[k] = new Node;
+                    cout << "Enter the name of subsection " << k + 1 << ": ";
+                    cin.ignore();
+                    getline(cin, root->child[i]->child[j]->subsection[k]->label);
+                }
+                cout << endl;
             }
             cout << endl;
         }
@@ -53,6 +65,11 @@ public:
 
             for (int j = 0; j < root->child[i]->cnt; j++) {
                 cout << "   Section " << j + 1 << ": " << root->child[i]->child[j]->label << endl;
+
+                for (int k = 0; k < root->child[i]->child[j]->cnt; k++) {
+                    cout << "      Subsection " << k + 1 << ": " << root->child[i]->child[j]->subsection[k]->label << endl;
+                }
+                cout << endl;
             }
             cout << endl;
         }
